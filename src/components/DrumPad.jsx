@@ -1,6 +1,5 @@
 
 
-
 const DrumPad = ({keyPad, audioSrc, setActiveSound, soundName}) => {
    const playSound = () =>{
         const audio = document.getElementById(keyPad);
