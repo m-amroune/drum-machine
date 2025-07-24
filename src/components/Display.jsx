@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Display = () => {
+const Display = ({activeSound}) => {
   return (
     <div>
-      
+      <div id="display">
+      {activeSound || "Ready"}
+    </div>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import {React, useState} from 'react'
 import {pads} from '../data/pads'
 import DrumPad from './DrumPad'
+import Display from './Display'
 
 const DrumMachine = () => {
     const [activeSound, setActiveSound] = useState('')
@@ -28,7 +29,7 @@ const DrumMachine = () => {
             { /* button on/off  */}
         <button id="power" className='btn' >Power</button>
         { /* display sound and volume*/}
-        <div id="display">Heater</div>
+       <Display activeSound={activeSound}/>
         { /* slider volume  */}
         <input id="sound" type="range" />
         <button id="bank" className='btn' >Bank</button>

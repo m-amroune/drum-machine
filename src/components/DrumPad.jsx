@@ -13,7 +13,7 @@ const DrumPad = ({keyPad, audioSrc, setActiveSound, soundName}) => {
   return (
     <div>
       
-    <div className="drum-pad"  onClick={playSound}   >
+    <div className="letter"  onClick={playSound}   >
       {keyPad}
       <audio className="clip" id={keyPad} src={audioSrc}  ></audio>
     </div>
