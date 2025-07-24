@@ -1,8 +1,10 @@
-import React from 'react'
+import {React, useState} from 'react'
 import {pads} from '../data/pads'
 import DrumPad from './DrumPad'
 
 const DrumMachine = () => {
+    const [activeSound, setActiveSound] = useState('')
+ 
   return (
     <div id="drum-machine">
         { /* pads  */}
@@ -14,6 +16,7 @@ const DrumMachine = () => {
     keyPad={pad.key}
     soundName={pad.name}
     audioSrc={pad.src}
+    setActiveSound = {setActiveSound}               
   />
 ))}
 
