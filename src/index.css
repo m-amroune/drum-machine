@@ -16,4 +16,40 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid orange;
+  padding: 2rem;
+}
+
+
+/*  PADS  */
+
+
+.letter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 80px;
+  border: 1px solid gray;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+#pads-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.2rem;
+}
+
+/*  CONTROLS  */
+
+#controls-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }

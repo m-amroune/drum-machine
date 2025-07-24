@@ -6,7 +6,10 @@ const DrumMachine = () => {
     <div id="drum-machine">
         { /* pads  */}
         <div id="left-panel">
-        <div id="pads-container" className='pad-container'>Pads</div>
+        <div id="pads-container" className='pad-container'>
+                {pads.map(pad=> <div key={pad.id} className='letter'  > {pad.key}</div>)}
+
+        </div>
         </div>
         <div id="right-panel" >
         <div id="controls-container">
