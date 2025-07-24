@@ -1,13 +1,22 @@
 import React from 'react'
 import {pads} from '../data/pads'
+import DrumPad from './DrumPad'
 
 const DrumMachine = () => {
   return (
     <div id="drum-machine">
         { /* pads  */}
         <div id="left-panel">
-        <div id="pads-container" className='pad-container'>
-                {pads.map(pad=> <div key={pad.id} className='letter'  > {pad.key}</div>)}
+        <div id="pads-container" className='pad-container'  >
+                {pads.map(pad => (
+  <DrumPad
+    key={pad.id}
+    keyPad={pad.key}
+    soundName={pad.name}
+    audioSrc={pad.src}
+  />
+))}
+
 
         </div>
         </div>
