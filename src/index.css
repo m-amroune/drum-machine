@@ -10,3 +10,10 @@ body {
   line-height: 1.5;
   padding: 1rem;
 }
+
+#drum-machine {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}

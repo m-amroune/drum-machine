@@ -1,4 +1,4 @@
-const pads = [
+export const pads = [
     {
     id: 1,    
     key:"Q",
@@ -53,5 +53,5 @@ const pads = [
     name:'Closed-HH',
     src:'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3'   
 },
-
 ]
+
