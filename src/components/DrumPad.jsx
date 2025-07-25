@@ -11,8 +11,8 @@ const DrumPad = ({keyPad, audioSrc, setActiveSound, soundName}) => {
     }
   return (
     <div>
-      
-    <div className="letter"  onClick={playSound}   >
+        { /* replace methode for delete space  */}
+    <div className="drum-pad" id={soundName.replace(/\s/g, '')}  onClick={playSound}   >
       {keyPad}
       <audio className="clip" id={keyPad} src={audioSrc}  ></audio>
     </div>

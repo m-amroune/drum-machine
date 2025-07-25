@@ -1,11 +1,40 @@
-import {React, useState} from 'react'
+import {React, useEffect, useState} from 'react'
 import {pads} from '../data/pads'
 import DrumPad from './DrumPad'
 import Display from './Display'
 
 const DrumMachine = () => {
     const [activeSound, setActiveSound] = useState('')
- 
+    useEffect(()=> {
+      const handleKeyDown = (event) => {
+        // if pad is on lowerCase
+        const key = event.key.toUpperCase(); 
+        console.log(key)
+        const audio = document.getElementById(key);
+        const pad = document.getElementById(key)?.parentElement;
+       const padData = pads.find(pad => pad.key === key)
+        if (!audio) {
+  console.log("Audio introuvable pour la touche :", key);
+}
+
+       if(audio){
+        audio.currentTime = 0;  // reset audio
+        audio.play() // new play
+        
+         pad.classList.add("active");
+         setTimeout(() => pad.classList.remove("active"),150);
+
+         if(padData){
+            setActiveSound(padData.name)
+         } 
+       }
+      }
+
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown)
+    },[])
+
+
   return (
     <div id="drum-machine">
         { /* pads  */}
