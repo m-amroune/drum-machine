@@ -5,8 +5,11 @@ import Display from './Display'
 
 const DrumMachine = () => {
     const [activeSound, setActiveSound] = useState('')
+    const [powerOn, setPowerOn] = useState(true);
     useEffect(()=> {
+      
       const handleKeyDown = (event) => {
+        if(!powerOn) return;
         // if pad is on lowerCase
         const key = event.key.toUpperCase(); 
         console.log(key)
@@ -32,7 +35,7 @@ const DrumMachine = () => {
 
       window.addEventListener("keydown", handleKeyDown);
       return () => window.removeEventListener("keydown", handleKeyDown)
-    },[])
+    },[powerOn])
 
 
   return (
@@ -46,7 +49,8 @@ const DrumMachine = () => {
     keyPad={pad.key}
     soundName={pad.name}
     audioSrc={pad.src}
-    setActiveSound = {setActiveSound}               
+    setActiveSound = {setActiveSound}
+     powerOn={powerOn}                
   />
 ))}
 
@@ -56,12 +60,12 @@ const DrumMachine = () => {
         <div id="right-panel" >
         <div id="controls-container">
             { /* button on/off  */}
-        <button id="power" className='btn' >Power</button>
+        <button id="power" className='btn'  onClick={()=> setPowerOn(power => !power)  }  >{powerOn ? "Power ON" : "Power OFF"}</button>
         { /* display sound and volume*/}
        <Display activeSound={activeSound}/>
         { /* slider volume  */}
         <input id="sound" type="range" />
-        <button id="bank" className='btn' >Bank</button>
+
         </div>
         </div>
     </div>
