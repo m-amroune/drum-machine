@@ -4,26 +4,41 @@
   padding: 0;
 }
 
+html, body {
+  height: 100vh;
+  margin: 0;
+}
+
 body {
   font-family: Lato, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ background-color: gray;
 }
 
 #drum-machine {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items:center;
   gap: 20px;
   max-width: 600px;
   margin: 0 auto;
   border: 5px solid orange;
   padding: 2rem;
+ background-color: #b3b3b3;;
 }
 
 
 /*  PADS  */
+#left-panel {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 
 
 .drum-pad{
@@ -38,12 +53,14 @@ body {
   border-radius: 5px;
   background-color: gray;
   cursor: pointer;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
 }
+
 
 #pads-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
 
 .drum-pad.active {
@@ -51,12 +68,35 @@ body {
   transform: scale(1.05);
 }
 
+
+  
+
+
 /*  CONTROLS  */
+#right-panel {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#power{
+  background-color: #48D1CC;
+  padding: 0.2rem;
+  font-weight: bold;
+  border: none;
+}
+
+#display{
+  background-color: gray;
+  padding: 1rem 2rem;
+}
 
 #controls-container{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  justify-content: center;
   align-items: center;
+  height: 100%;
 }
 

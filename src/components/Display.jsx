@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Display = ({activeSound, volume}) => {
+// Dynamic display
+const Display = ({activeSound, volume, isChangingVolume}) => {
+  // Display volume while adjusting,  otherwhise show active sound
+    const message = isChangingVolume
+    ? `Volume: ${Math.round(volume * 100)}`
+    : activeSound || "Ready";
+
   return (
     
       <div id="display">
-      {activeSound || "Ready"} Volume: {Math.round(volume * 100)}
+      {message}
     </div>
    
   )

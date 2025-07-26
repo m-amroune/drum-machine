@@ -1,14 +1,15 @@
 
-
+// component for each pad
 const DrumPad = ({keyPad, audioSrc, setActiveSound, soundName, powerOn, volume}) => {
    const playSound = () =>{
     if (!powerOn) return;
         const audio = document.getElementById(keyPad);
         if(audio){
-          audio.currentTime = 0;
+         
+          audio.currentTime = 0;  // reset audio 
           audio.volume = volume;
           audio.play();
-          setActiveSound(soundName)
+          setActiveSound(soundName) // Update the currently active sound
         }
     }
   return (
