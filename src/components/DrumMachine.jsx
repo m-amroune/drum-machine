@@ -6,6 +6,7 @@ import Display from './Display'
 const DrumMachine = () => {
     const [activeSound, setActiveSound] = useState('')
     const [powerOn, setPowerOn] = useState(true);
+    const [volume, setVolume ] = useState(''); 
     useEffect(()=> {
       
       const handleKeyDown = (event) => {
@@ -50,7 +51,8 @@ const DrumMachine = () => {
     soundName={pad.name}
     audioSrc={pad.src}
     setActiveSound = {setActiveSound}
-     powerOn={powerOn}                
+     powerOn={powerOn}  
+     volume={volume}              
   />
 ))}
 
@@ -62,9 +64,15 @@ const DrumMachine = () => {
             { /* button on/off  */}
         <button id="power" className='btn'  onClick={()=> setPowerOn(power => !power)  }  >{powerOn ? "Power ON" : "Power OFF"}</button>
         { /* display sound and volume*/}
-       <Display activeSound={activeSound}/>
+       <Display activeSound={activeSound} volume={volume}/>
         { /* slider volume  */}
-        <input id="sound" type="range" />
+        <input  id="sound"
+  type="range"
+  min="0"
+  max="1"
+  step="0.05"
+  value={volume}
+  onChange={(e) => setVolume(Number(e.target.value))} />
 
         </div>
         </div>
